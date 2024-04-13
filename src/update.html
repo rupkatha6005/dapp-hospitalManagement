@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+</style>
+
+
+</head>
+<body>
+<h1>Update Patient Information</h1>
+
+
+<form onsubmit="App.updateVaccine(); return false;">
+  <div class="container">
+    
+    <hr>
+    <label for="id"><b>Patient Id</b></label>
+    <input type="text" placeholder="" name="id" id="id" required>
+
+    <label>   
+	Vaccine Status :  
+	</label><br>  
+	<input type="radio" value="none" name="vaccine" id="vaccine" checked > None 
+	<input type="radio" value="first" name="vaccine" id="vaccine"> First Dose   
+	<input type="radio" value="second" name="vaccine" id="vaccine"> Second Dose 
+	
+	<br><br>
+	 
+	<hr>
+
+    <button type="submit" class="registerbtn">Update vaccine status</button>
+  </div>
+</form>
+
+
+<form onsubmit="App.updateIsDead(); return false;">
+  <div class="container">
+    
+
+  
+
+    <label for="id"><b>Patient Id</b></label>
+    <input type="text" placeholder="" name="id" id="id" required>
+	<label>   
+	The user has died:  
+	</label><br>
+	<input type="radio" value="true" name="is_dead" id="is_dead" > True
+	<input type="radio" value="false" name="is_dead" id="is_dead" checked > False
+	
+	<hr>
+
+    <button type="submit" class="registerbtn">Update Whatever</button>
+  </div>
+</form>
+
+
+
+<form onsubmit="App.updateHasCovid(); return false;">
+  <div class="container">
+    <hr>
+    <label for="id"><b>Patient Id</b></label>
+    <input type="text" placeholder="" name="id" id="id" required>
+
+	<br><br>
+	<label>   
+	Covid Status :  
+	</label><br>  
+	<input type="radio" value="true" name="hasCovid" id="hasCovid" > Has Covid
+	<input type="radio" value="false" name="hasCovid" id="hasCovid" checked> Doesn't have covid
+	 
+	<hr>
+
+    <button type="submit" class="registerbtn">Update Information</button>
+  </div>
+  
+  
+</form>
+  
+  
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
